@@ -15,6 +15,15 @@
    - `--des 'Exp'`：实验描述。
    - `--itr 1`：训练的迭代次数或运行次数。
    - `--d_model`、`--d_ff`、`--batch_size`、`--learning_rate`：设置模型维度、前馈网络大小、训练批次大小和学习率。
-   - `--down_sampling_layers`、`--down_sampling_method`、`--down_sampling_window`：有关数据预处理中降采样的设置。
+   - `--down_sampling_layers`、`--down_sampling_method`、`--down_sampling_window`：有关数据预处理中降采样的设置。  
 
-此命令将用指定的配置训练TimeMixer模型，特别适用于处理来自"ETT-small"数据集的长期预测任务的时间序列数据。如果您需要运行此脚本，请确保根据您的具体设置和需求调整路径和参数。
+此命令将用指定的配置训练TimeMixer模型，特别适用于处理来自"ETT-small"数据集的长期预测任务的时间序列数据。如果您需要运行此脚本，请确保根据您的具体设置和需求调整路径和参数。  
+
+参数的作用总结  
+这些参数共同定义了输入数据的形状和模型架构的关键配置：  
+
+features：描述输入输出数据的特征结构（单变量/多变量）。 
+seq_len 和 pred_len：控制输入历史序列和未来预测序列的长度。  
+label_len：标记序列，用于解码器或特殊任务。  
+e_layers：编码器的层数，影响模型的表达能力。  
+enc_in 和 c_out：输入和输出的变量维度，决定了模型处理的数据特征数量。  
